@@ -74,8 +74,10 @@ Mini-Courier-Planner/
 
 ## 📊 Performance Analysis
 The algorithms were benchmarked across varying input sizes ($N = 10, 25, 50, 100, 200$). Experimental runtime results and visualizations are saved in:
-- `images/performance_results.csv`
-- `images/runtime_chart.png`
+- <img width="1212" height="197" alt="image" src="https://github.com/user-attachments/assets/42ba8fcf-f129-4569-91c0-8c0a50ca8109" />
+
+- <img width="2968" height="1768" alt="image" src="https://github.com/user-attachments/assets/4eea6241-b0c6-4ce0-a13e-d02f4ca5cbe9" />
+
 
 ## 🏁 Outputs & Results
 - Prioritized parcels sorted by urgency and deadlines
