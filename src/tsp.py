@@ -69,14 +69,17 @@ def nearest_neighbor_tsp(graph, start, destinations):
     Generate a delivery route using
     Nearest-Neighbor TSP approximation.
 
-    At every step, the nearest unvisited
-    destination is selected using shortest-path distance.
+    Returns:
+        customer_order: Order of customer visits.
+        route: Expanded shortest-path traversal.
+        total_distance: Total route distance.
     """
 
     unvisited = set(destinations)
 
     current = start
 
+    customer_order = [start]
     route = [start]
     total_distance = 0
 
@@ -100,8 +103,11 @@ def nearest_neighbor_tsp(graph, start, destinations):
                 nearest_distance = distance
                 nearest_path = path
 
-        # Add shortest path to the selected destination
+        # Add expanded shortest path
         route.extend(nearest_path[1:])
+
+        # Add only the actual customer
+        customer_order.append(nearest_destination)
 
         total_distance += nearest_distance
 
@@ -109,7 +115,7 @@ def nearest_neighbor_tsp(graph, start, destinations):
 
         unvisited.remove(nearest_destination)
 
-    # Return to starting point
+    # Return to Warehouse
     return_path, return_distance = shortest_path(
         graph,
         current,
@@ -118,6 +124,8 @@ def nearest_neighbor_tsp(graph, start, destinations):
 
     route.extend(return_path[1:])
 
+    customer_order.append(start)
+
     total_distance += return_distance
 
-    return route, total_distance
+    return customer_order, route, total_distance
