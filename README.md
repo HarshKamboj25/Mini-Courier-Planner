@@ -1,80 +1,92 @@
-# 🚚 Mini-Courier Planner
+# 🚚 Mini Courier Planner
 
-## Project Overview
+A Design and Analysis of Algorithms (DAA) Capstone Project.
 
-Mini-Courier Planner is a Python-based courier planning system that prioritizes parcels, selects an optimal set of parcels within vehicle capacity, finds shortest delivery paths, and generates a delivery route.
+---
 
-## Algorithms Used
+## 🎓 Project & Student Information
+- **Project Title:** Mini Courier Planner
+- **Author:** Harsh Kamboj
+- **Roll Number:** 2501730059
+- **Programme:** B.Tech CSE (AI & ML)
+- **Course:** Design and Analysis of Algorithms (DAA)
 
-- Merge Sort – Parcel prioritization
-- 0/1 Knapsack (Dynamic Programming)** – Optimal parcel selection
-- Dijkstra's Algorithm – Shortest paths
-- Nearest-Neighbor TSP – Delivery route planning
-- Runtime Analysis – Performance evaluation
+---
 
-## Project Flow
+## 📌 Project Overview
+Mini Courier Planner is a Python-based courier planning system that prioritizes parcels, selects an optimal set of parcels within vehicle capacity, computes shortest delivery paths, and generates an optimized delivery route.
 
-   text
-Parcel Data
-    ↓
-Sorting
-    ↓
-0/1 Knapsack
-    ↓
-Selected Parcels
-    ↓
-Dijkstra
-    ↓
-Nearest-Neighbor TSP
-    ↓
-Final Delivery Route
-    ↓
-Runtime Analysis
+## ⚙️ Algorithms Used
+- **Merge Sort** – Parcel prioritization based on priority rank and delivery deadlines
+- **0/1 Knapsack (Dynamic Programming)** – Optimal parcel selection maximizing value under vehicle capacity constraint
+- **Dijkstra's Algorithm** – Single-source shortest path calculation on the road network
+- **Nearest-Neighbor TSP** – Heuristic delivery tour planning
+- **Empirical Runtime Analysis** – Algorithmic benchmarking across scaling input sizes
 
-Dataset
-- datasets/parcels.csv – Parcel information
-- datasets/routes.csv – Weighted delivery graph
+## 🔄 Project Flow
 
-Project Structure
+```mermaid
+flowchart TD
+    A["📦 Parcel & Route Data"] --> B["⚡ Merge Sort<br/>(Parcel Prioritization)"]
+    B --> C["🎒 0/1 Knapsack DP<br/>(Capacity Optimization)"]
+    C --> D["✅ Selected Parcels"]
+    D --> E["📍 Dijkstra's Algorithm<br/>(Shortest Paths)"]
+    E --> F["🚚 Nearest-Neighbor TSP<br/>(Route Tour Construction)"]
+    F --> G["🏁 Final Delivery Route & Total Distance"]
+    G --> H["📊 Empirical Runtime Analysis"]
+```
 
+
+## 📁 Project Structure
+
+```text
 Mini-Courier-Planner/
 ├── datasets/
-│   ├── parcels.csv
-│   └── routes.csv
+│   ├── parcels.csv               # Input parcel dataset (weights, values, priorities, deadlines)
+│   └── routes.csv                # Delivery network graph with edge weights (distances in km)
 ├── images/
-│   ├── performance_results.csv
-│   └── runtime_chart.png
+│   ├── performance_results.csv   # Benchmarking logs recorded across varying input sizes
+│   ├── route_visualization.png   # Visual plot of the final TSP customer delivery route
+│   └── runtime_chart.png         # Comparative runtime scaling chart
 ├── src/
-│   ├── sorting.py
-│   ├── knapsack.py
-│   ├── dijkstra.py
-│   ├── tsp.py
-│   └── performance.py
-├── mini_courier_planner.ipynb
-├── README.md
-├── requirements.txt
-└── .gitignore
+│   ├── sorting.py                # Merge Sort implementation for parcel prioritization
+│   ├── knapsack.py               # 0/1 Knapsack dynamic programming algorithm
+│   ├── dijkstra.py               # Dijkstra's algorithm for single-source shortest paths
+│   ├── tsp.py                    # Nearest-Neighbor TSP heuristic for delivery route planning
+│   └── performance.py            # Execution profiler and timing utilities
+├── mini_courier_planner.ipynb    # Complete interactive Jupyter pipeline and analysis
+├── requirements.txt              # Python library dependencies
+├── .gitignore                    # Git untracked files specification
+└── README.md                     # Project documentation and execution instructions
+```
 
-Execution
-Install the required dependencies:
 
-pip install -r requirements.txt
+## 🚀 Execution Guide
+1. **Install required dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Open and run:
+2. **Open and run the notebook:**
+   ```bash
+   jupyter notebook mini_courier_planner.ipynb
+   ```
 
-mini_courier_planner.ipynb
+## 📊 Performance Analysis
+The algorithms were benchmarked across varying input sizes ($N = 10, 25, 50, 100, 200$). Experimental runtime results and visualizations are saved in:
+- `images/performance_results.csv`
+- `images/runtime_chart.png`
 
-Performance Analysis
-The system was tested with different input sizes and runtime results were recorded and visualized in:
-images/performance_results.csv
-images/runtime_chart.png
-Final Result
-The system provides:
-- Prioritized parcels
-- Optimized parcel selection
-- Shortest delivery paths
-- Final delivery route
-- Total route distance
-- Runtime comparison
-Technologies
-Python, Pandas, NetworkX, Matplotlib, and Jupyter Notebook.
+## 🏁 Outputs & Results
+- Prioritized parcels sorted by urgency and deadlines
+- Globally optimal parcel subset fitting vehicle payload
+- Shortest delivery paths from the central warehouse
+- Complete TSP delivery tour with expanded traversal path
+- Overall route distance and benchmark comparisons
+
+## 🛠️ Technologies
+- **Python 3**
+- **Pandas** – Dataset manipulation
+- **NetworkX** – Graph representation and modeling
+- **Matplotlib** – Route and performance visualization
+- **Jupyter Notebook** – Interactive execution and reporting
