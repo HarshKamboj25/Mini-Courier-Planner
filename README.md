@@ -1,6 +1,12 @@
 # 🚚 Mini Courier Planner
 
 <p align="center">
+  <a href="https://github.com/HarshKamboj25/Mini-Courier-Planner">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=650&lines=Mini+Courier+Planner;Smart+Parcel+Selection;Optimized+Delivery+Routing;Algorithms+in+Action" alt="Animated Mini Courier Planner heading" />
+  </a>
+</p>
+
+<p align="center">
   <strong>From Parcel Selection to Route Optimization</strong><br>
   An Algorithm-Driven Courier Planning System
 </p>
@@ -12,37 +18,32 @@
   <img src="https://img.shields.io/badge/Status-Completed-success" />
 </p>
 
----
-
-## 🎓 Project Information
-
-| Detail | Information |
-|---|---|
-| **Project Title** | Mini Courier Planner |
-| **Author** | Harsh Kamboj |
-| **Roll Number** | 2501730059 |
-| **Programme** | B.Tech CSE (AI & ML) |
-| **Course** | Design and Analysis of Algorithms |
-| **Institution** | K.R. Mangalam University |
+<p align="center">
+  <a href="#-about-the-project">Overview</a> •
+  <a href="#-system-workflow">Workflow</a> •
+  <a href="#-project-results">Results</a> •
+  <a href="#-performance-analysis">Performance</a> •
+  <a href="#-getting-started">Run Project</a>
+</p>
 
 ---
 
 ## 📌 About the Project
 
-Mini Courier Planner is a Python-based courier optimization system developed as a DAA capstone project.
+Mini Courier Planner is a Python-based courier optimization system developed as a Design and Analysis of Algorithms (DAA) capstone project.
 
-It combines fundamental algorithmic techniques to solve two major courier-planning challenges:
+It combines sorting, dynamic programming, graph algorithms, and approximation techniques to solve two major courier-planning challenges:
 
-- **Parcel Optimization:** Which parcels should be selected to maximize total value without exceeding vehicle capacity?
-- **Delivery Optimization:** In what order should delivery locations be visited to reduce the overall travel distance?
+- **📦 Parcel Optimization:** Select the most valuable combination of parcels without exceeding vehicle capacity.
+- **🗺️ Delivery Optimization:** Determine an efficient customer visit order using shortest-path calculations and route planning.
 
-The system integrates sorting, dynamic programming, graph algorithms, and approximation techniques into one complete planning workflow.
+The system transforms parcel and route datasets into a complete delivery plan, followed by empirical runtime evaluation.
 
 ---
 
-## ⚡ How the System Works
+## ⚡ System Workflow
 
-The project follows a sequential algorithmic pipeline, from raw input data to the final delivery plan.
+The complete pipeline takes the system from raw input datasets to an optimized parcel selection and delivery route.
 
 ```mermaid
 flowchart TD
@@ -64,39 +65,40 @@ flowchart TD
     style L fill:#312e81,stroke:#a5b4fc,color:#fff
 ```
 
-### 🔄 Algorithmic Workflow
+### 🔄 Algorithmic Pipeline
 
-| Stage | Technique | Purpose |
+| Stage | Algorithm | Responsibility |
 |---|---|---|
-| 01 | **Merge Sort** | Prioritizes parcels using priority and delivery deadlines |
-| 02 | **0/1 Knapsack (DP)** | Selects the maximum-value feasible parcel combination |
-| 03 | **Dijkstra's Algorithm** | Computes shortest paths in the weighted delivery graph |
-| 04 | **Nearest-Neighbor TSP** | Constructs an approximate delivery tour |
-| 05 | **Runtime Analysis** | Evaluates algorithm performance across different input sizes |
+| 01 | ⚡ Merge Sort | Parcel prioritization using priority and deadlines |
+| 02 | 🎒 0/1 Knapsack DP | Maximum-value parcel selection within capacity |
+| 03 | 📍 Dijkstra | Shortest paths through the weighted graph |
+| 04 | 🚚 Nearest-Neighbor TSP | Approximate customer delivery tour |
+| 05 | ⏱️ Runtime Analysis | Performance evaluation across input sizes |
 
----
+<details>
+<summary><strong>🧠 Explore the algorithmic implementation</strong></summary>
 
-## 🧠 Core Algorithm Design
-
-**1. Parcel Prioritization**
+### 1. Parcel Prioritization
 
 Merge Sort arranges parcels in descending order of priority. When priorities are equal, parcels with earlier deadlines are placed first.
 
-**2. Capacity Optimization**
+### 2. Capacity Optimization
 
 The 0/1 Knapsack algorithm uses Dynamic Programming to select parcels while respecting the vehicle's maximum carrying capacity.
 
-**3. Shortest-Path Computation**
+### 3. Shortest-Path Computation
 
 Dijkstra's Algorithm calculates minimum travel distances between the warehouse and delivery locations using a weighted graph.
 
-**4. Delivery Tour Construction**
+### 4. Delivery Tour Construction
 
-The Nearest-Neighbor TSP heuristic determines the next closest unvisited customer and builds a complete delivery tour, including the return to the warehouse.
+The Nearest-Neighbor TSP heuristic selects the next closest unvisited customer and constructs a complete delivery tour, including the return to the warehouse.
 
-**5. Performance Evaluation**
+### 5. Performance Evaluation
 
 Execution times are measured for increasing input sizes to study the computational behaviour of the implemented algorithms.
+
+</details>
 
 ---
 
@@ -129,48 +131,66 @@ Mini-Courier-Planner/
 
 ---
 
+## 🛣️ Route Visualization
+
+The project generates a visual representation of the final delivery route across the weighted delivery network.
+
+<p align="center">
+  <img src="images/route_visualization.png" width="85%" alt="Mini Courier Planner delivery route visualization" />
+  <br>
+  <sub>Generated delivery route visualization.</sub>
+</p>
+
+---
+
 ## 🚀 Getting Started
 
 Follow these steps to run the project locally.
 
-**1. Clone the repository**
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/HarshKamboj25/Mini-Courier-Planner.git
 cd Mini-Courier-Planner
 ```
 
-**2. Create and activate a virtual environment (optional)**
+### 2. Create a Virtual Environment (Optional)
 
-Windows:
+**Windows**
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-Linux / macOS:
+**Linux / macOS**
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-**3. Install dependencies**
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Launch Jupyter Notebook**
+### 4. Launch Jupyter Notebook
 
 ```bash
 jupyter notebook mini_courier_planner.ipynb
 ```
 
-**5. Execute the notebook**
+### 5. Run the Pipeline
 
-Run the notebook cells sequentially to reproduce parcel prioritization, optimal selection, shortest-path calculations, route construction, and performance analysis.
+Execute the notebook cells sequentially to reproduce:
+
+- Parcel prioritization
+- Optimal parcel selection
+- Shortest-path calculations
+- Delivery route construction
+- Runtime benchmarking and visualizations
 
 ---
 
@@ -186,15 +206,25 @@ The implemented system produces the following results for the supplied dataset:
 | Total Selected Weight | 15 kg |
 | Total Parcel Value | 390 |
 | Customer Visit Order | Warehouse → B → C → D → E → Warehouse |
-| Total Route Distance | **29 km** |
+| **Total Route Distance** | **29 km** |
 
-### 🛣️ Final Delivery Route
+### 🚚 Final Delivery Traversal
+
+```text
+Warehouse
+    ↓
+    B → C → D → E
+              ↓
+Warehouse ← A ← C ← D
+```
+
+**Expanded Shortest-Path Traversal:**
 
 ```text
 Warehouse → B → C → D → E → D → C → A → Warehouse
 ```
 
-The customer visit order is generated by the Nearest-Neighbor TSP heuristic, while Dijkstra's Algorithm provides the shortest physical paths between consecutive delivery locations.
+The Nearest-Neighbor TSP heuristic determines the customer visit order, while Dijkstra's Algorithm provides the shortest physical paths between consecutive locations.
 
 ---
 
@@ -202,7 +232,9 @@ The customer visit order is generated by the Nearest-Neighbor TSP heuristic, whi
 
 The four major algorithmic components were benchmarked using increasing input sizes:
 
-**N = 10, 25, 50, 100, 200**
+<p align="center">
+  <img src="https://img.shields.io/badge/Input%20Sizes-10%20%7C%2025%20%7C%2050%20%7C%20100%20%7C%20200-2563EB?style=for-the-badge" />
+</p>
 
 ### 📋 Performance Results
 
@@ -228,11 +260,20 @@ The measured execution times are stored in:
   <sub>Execution time comparison across different input sizes.</sub>
 </p>
 
-**Key Observation:** The Nearest-Neighbor TSP component becomes the dominant computational bottleneck as the tested input size increases.
+> **Key Observation:** The Nearest-Neighbor TSP component becomes the dominant computational bottleneck as the tested input size increases.
 
 ---
 
 ## 🛠️ Technology Stack
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NetworkX-333333?style=flat-square" />
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=flat-square" />
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+</p>
 
 | Technology | Application |
 |---|---|
@@ -256,14 +297,18 @@ The measured execution times are stored in:
 
 ---
 
-## 📚 Academic Context
+## 👨‍💻 Author
 
-This project demonstrates the practical application of **Design and Analysis of Algorithms (DAA)** concepts through an integrated courier-planning problem.
+**Harsh Kamboj**
 
-It brings together sorting, dynamic programming, graph traversal, approximation algorithms, and empirical performance evaluation in a single Python-based implementation.
+---
 
 <p align="center">
-  <strong>Mini Courier Planner</strong><br>
-  Designed and developed as a B.Tech CSE (AI & ML) DAA Capstone Project<br>
-  K.R. Mangalam University
+  <strong>🚚 Mini Courier Planner</strong><br>
+  <em>Prioritize. Optimize. Deliver.</em><br><br>
+  Built with Python and Algorithmic Thinking.
+</p>
+
+<p align="center">
+  <a href="#-mini-courier-planner">⬆ Back to Top</a>
 </p>
